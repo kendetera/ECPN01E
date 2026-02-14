@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            expDate = new DateTimePicker();
+            manufacturedDate = new DateTimePicker();
             button2 = new Button();
             barcodePicturebox = new PictureBox();
             button1 = new Button();
@@ -55,8 +57,6 @@
             label2 = new Label();
             label1 = new Label();
             productPicturebox = new PictureBox();
-            manufacturedDate = new DateTimePicker();
-            expDate = new DateTimePicker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)barcodePicturebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -100,6 +100,20 @@
             panel1.Size = new Size(1071, 670);
             panel1.TabIndex = 0;
             // 
+            // expDate
+            // 
+            expDate.Location = new Point(554, 236);
+            expDate.Name = "expDate";
+            expDate.Size = new Size(165, 23);
+            expDate.TabIndex = 390;
+            // 
+            // manufacturedDate
+            // 
+            manufacturedDate.Location = new Point(554, 193);
+            manufacturedDate.Name = "manufacturedDate";
+            manufacturedDate.Size = new Size(165, 23);
+            manufacturedDate.TabIndex = 389;
+            // 
             // button2
             // 
             button2.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -130,7 +144,7 @@
             button1.TabIndex = 386;
             button1.Text = "Browse";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click; // wire the click handler
+            button1.Click += button1_Click;
             // 
             // stocksTxtbox
             // 
@@ -252,7 +266,7 @@
             newBtn.Name = "newBtn";
             newBtn.Size = new Size(266, 39);
             newBtn.TabIndex = 370;
-            newBtn.Text = "NEW / CANCEL";
+            newBtn.Text = "NEW";
             newBtn.UseVisualStyleBackColor = true;
             // 
             // deleteBtn
@@ -339,20 +353,6 @@
             productPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             productPicturebox.TabIndex = 361;
             productPicturebox.TabStop = false;
-            // 
-            // manufacturedDate
-            // 
-            manufacturedDate.Location = new Point(554, 193);
-            manufacturedDate.Name = "manufacturedDate";
-            manufacturedDate.Size = new Size(165, 23);
-            manufacturedDate.TabIndex = 389;
-            // 
-            // expDate
-            // 
-            expDate.Location = new Point(554, 236);
-            expDate.Name = "expDate";
-            expDate.Size = new Size(165, 23);
-            expDate.TabIndex = 390;
             // 
             // Inventory
             // 

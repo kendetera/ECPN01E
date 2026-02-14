@@ -48,5 +48,15 @@ namespace Elective
                 cm.Dispose();
             };
         }
+        private void Cashier_Interface_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dateLbl.Text = DateTime.Now.ToLongDateString();
+            timeLbl.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }
