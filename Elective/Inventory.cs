@@ -297,5 +297,10 @@ VALUES
                 MessageBox.Show($"Unexpected error:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

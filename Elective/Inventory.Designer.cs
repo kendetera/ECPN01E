@@ -309,6 +309,7 @@
             searchBtn.TabIndex = 366;
             searchBtn.Text = "SEARCH";
             searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtn_Click;
             // 
             // priceTxtbox
             // 
