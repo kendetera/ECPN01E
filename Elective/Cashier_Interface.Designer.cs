@@ -45,7 +45,7 @@
             button18 = new Button();
             button20 = new Button();
             button19 = new Button();
-            button2 = new Button();
+            enterBtn = new Button();
             label31 = new Label();
             button21 = new Button();
             totalAmountTxtbox = new TextBox();
@@ -57,20 +57,18 @@
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             dateLbl = new Label();
             timeLbl = new Label();
             productLbl = new Label();
             barcodeTxtbox = new TextBox();
             panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            saveBtn = new Button();
+            newBtn = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // timer1
@@ -222,23 +220,24 @@
             button19.Text = "9";
             button19.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // enterBtn
             // 
-            button2.BackColor = Color.LimeGreen;
-            button2.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(430, 774);
-            button2.Margin = new Padding(4, 3, 4, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 192);
-            button2.TabIndex = 190;
-            button2.Text = "E\r\nN\r\nT\r\nE\r\nR\r\n";
-            button2.UseVisualStyleBackColor = false;
+            enterBtn.BackColor = Color.LimeGreen;
+            enterBtn.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            enterBtn.Location = new Point(430, 774);
+            enterBtn.Margin = new Padding(4, 3, 4, 3);
+            enterBtn.Name = "enterBtn";
+            enterBtn.Size = new Size(80, 192);
+            enterBtn.TabIndex = 190;
+            enterBtn.Text = "E\r\nN\r\nT\r\nE\r\nR\r\n";
+            enterBtn.UseVisualStyleBackColor = false;
+            enterBtn.Click += enterBtn_Click;
             // 
             // label31
             // 
             label31.AutoSize = true;
             label31.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label31.Location = new Point(68, 568);
+            label31.Location = new Point(68, 564);
             label31.Margin = new Padding(4, 0, 4, 0);
             label31.Name = "label31";
             label31.Size = new Size(137, 36);
@@ -286,6 +285,7 @@
             cashRenderedTxtbox.Name = "cashRenderedTxtbox";
             cashRenderedTxtbox.Size = new Size(270, 49);
             cashRenderedTxtbox.TabIndex = 174;
+            cashRenderedTxtbox.TextChanged += cashRenderedTxtbox_TextChanged;
             // 
             // label10
             // 
@@ -301,7 +301,7 @@
             // changeTxtbox
             // 
             changeTxtbox.Font = new Font("Century Gothic", 20.25F);
-            changeTxtbox.Location = new Point(337, 558);
+            changeTxtbox.Location = new Point(337, 554);
             changeTxtbox.Margin = new Padding(4, 3, 4, 3);
             changeTxtbox.Multiline = true;
             changeTxtbox.Name = "changeTxtbox";
@@ -335,9 +335,9 @@
             // 
             pictureBox1.BackColor = Color.DarkSlateGray;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(39, 12);
+            pictureBox1.Location = new Point(12, -12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(84, 84);
+            pictureBox1.Size = new Size(116, 114);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 208;
             pictureBox1.TabStop = false;
@@ -353,53 +353,6 @@
             label1.Size = new Size(146, 25);
             label1.TabIndex = 205;
             label1.Text = "POS Software";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeight = 30;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(745, 175);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(938, 361);
-            dataGridView1.TabIndex = 205;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Qty";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Name";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Price";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Total";
-            Column4.Name = "Column4";
             // 
             // dateLbl
             // 
@@ -430,9 +383,9 @@
             productLbl.Location = new Point(68, 275);
             productLbl.Margin = new Padding(4, 0, 4, 0);
             productLbl.Name = "productLbl";
-            productLbl.Size = new Size(167, 36);
+            productLbl.Size = new Size(144, 36);
             productLbl.TabIndex = 208;
-            productLbl.Text = "Product ID:";
+            productLbl.Text = "Barcode:";
             // 
             // barcodeTxtbox
             // 
@@ -443,10 +396,13 @@
             barcodeTxtbox.Name = "barcodeTxtbox";
             barcodeTxtbox.Size = new Size(270, 49);
             barcodeTxtbox.TabIndex = 209;
+            barcodeTxtbox.KeyDown += barcodeTxtbox_KeyDown;
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkSeaGreen;
+            panel1.Controls.Add(newBtn);
+            panel1.Controls.Add(saveBtn);
             panel1.Controls.Add(barcodeTxtbox);
             panel1.Controls.Add(productLbl);
             panel1.Controls.Add(timeLbl);
@@ -461,7 +417,7 @@
             panel1.Controls.Add(totalAmountTxtbox);
             panel1.Controls.Add(button21);
             panel1.Controls.Add(label31);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(enterBtn);
             panel1.Controls.Add(button19);
             panel1.Controls.Add(button20);
             panel1.Controls.Add(button18);
@@ -481,6 +437,54 @@
             panel1.Size = new Size(1904, 1041);
             panel1.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.Location = new Point(745, 175);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(938, 361);
+            dataGridView1.TabIndex = 205;
+            // 
+            // saveBtn
+            // 
+            saveBtn.BackColor = Color.Khaki;
+            saveBtn.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            saveBtn.Location = new Point(518, 775);
+            saveBtn.Margin = new Padding(4, 3, 4, 3);
+            saveBtn.Name = "saveBtn";
+            saveBtn.Size = new Size(80, 192);
+            saveBtn.TabIndex = 210;
+            saveBtn.Text = "S\r\nA\r\nV\r\nE";
+            saveBtn.UseVisualStyleBackColor = false;
+            saveBtn.Click += saveBtn_Click;
+            // 
+            // newBtn
+            // 
+            newBtn.BackColor = Color.Khaki;
+            newBtn.Font = new Font("Century Gothic", 18F, FontStyle.Bold);
+            newBtn.Location = new Point(518, 708);
+            newBtn.Margin = new Padding(4, 3, 4, 3);
+            newBtn.Name = "newBtn";
+            newBtn.Size = new Size(80, 60);
+            newBtn.TabIndex = 211;
+            newBtn.Text = "NEW";
+            newBtn.UseVisualStyleBackColor = false;
+            // 
             // Cashier_Interface
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -494,12 +498,21 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
-
+        private void barcodeTxtbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string scannedCode = barcodeTxtbox.Text.Trim();
+                FetchProductData(scannedCode);
+                barcodeTxtbox.Clear();
+                e.SuppressKeyPress = true;
+            }
+        }
         #endregion
 
         private System.Windows.Forms.Timer timer1;
@@ -516,7 +529,7 @@
         private Button button18;
         private Button button20;
         private Button button19;
-        private Button button2;
+        private Button enterBtn;
         private Label label31;
         private Button button21;
         private TextBox totalAmountTxtbox;
@@ -528,15 +541,13 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label label1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Label dateLbl;
         private Label timeLbl;
         private Label productLbl;
         private TextBox barcodeTxtbox;
         private Panel panel1;
+        private DataGridView dataGridView1;
+        private Button newBtn;
+        private Button saveBtn;
     }
 }

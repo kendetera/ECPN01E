@@ -99,6 +99,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1071, 670);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // expDate
             // 
@@ -268,6 +269,7 @@
             newBtn.TabIndex = 370;
             newBtn.Text = "NEW";
             newBtn.UseVisualStyleBackColor = true;
+            newBtn.Click += newBtn_Click;
             // 
             // deleteBtn
             // 
@@ -278,6 +280,7 @@
             deleteBtn.TabIndex = 369;
             deleteBtn.Text = "DELETE";
             deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // updateBtn
             // 
